@@ -51,6 +51,6 @@ jobs:
       - uses: actions/setup-python@v2
       - uses: helm/chart-testing-action@v2.1.0
 
-      - run: ct lint --config $GITHUB_WORKSPACE/.github/chart-testing.yml --charts ${{ matrix.chart-name }}
+      - run: ct lint --config $GITHUB_WORKSPACE/.github/chart-testing.yml --charts charts/${{ matrix.chart-name }}
       - uses: helm/kind-action@v1.2.0
-      - run: ct install --config $GITHUB_WORKSPACE/.github/chart-testing.yml --charts ${{ matrix.chart-name }}
+      - run: ct install --config $GITHUB_WORKSPACE/.github/chart-testing.yml --charts charts/${{ matrix.chart-name }}
