@@ -1,0 +1,9 @@
+apiVersion: cert-manager.io/v1beta1
+
+global:
+  annotations: {}
+  labels: {}
+
+certificates: {}
+
+issuers: {}
