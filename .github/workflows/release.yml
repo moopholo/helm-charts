@@ -43,6 +43,6 @@ jobs:
       - uses: azure/setup-helm@v1
       - uses: helm/chart-releaser-action@v1.2.1
         with:
-          config: ${{ env.GITHUB_WORKSPACE }}/.github/chart-release.yml
+          config: .github/chart-release.yml
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
