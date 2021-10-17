@@ -27,7 +27,7 @@ jobs:
 
       - id: set-matrix
         run: |
-          ./.github/scripts/list-changes.sh
+          ./.github/scripts/list-changed.sh
 
   chart-test:
     name: runner / test-charts
