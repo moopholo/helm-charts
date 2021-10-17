@@ -1,3 +1,4 @@
-documentation: [docs/**/*, "**/README.md", "**/CHANGELOG.md"]
+documentation: [docs/**/*, "**/README.md"]
+changelog: ["**/CHANGELOG.md"]
 chart/traefik-custom-resources: [charts/traefik-custom-resources/**/*]
 chart/cert-manager-tls: [charts/cert-manager-tls/**/*]
