@@ -4,7 +4,7 @@ export PROJECT_DIR="${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel)}"
 source "$PROJECT_DIR/.github/scripts/utils.sh"
 
 function charts_with_changes_json_array() {
-  decalre -a charts
+  declare -a charts
   for c in $(ct list-changed --config "$PROJECT_DIR/.github/chart-testing.yml"); do
     charts+=("${c##charts/}")
   done
