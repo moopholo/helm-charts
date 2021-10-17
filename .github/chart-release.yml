@@ -1,0 +1,3 @@
+index-path: .helm/index.yaml
+package-path: .helm/packages
+pr: true
