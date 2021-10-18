@@ -1,1 +1,3 @@
-pr: true
+owner: moopholo
+index-path: .helm/index.yaml
+package-path: .helm/packages
