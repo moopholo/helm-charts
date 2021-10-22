@@ -3,4 +3,4 @@ name: cert-manager-tls
 description: A Helm chart for Kubernetes to install cert-manager certificates and issuers
 type: application
 
-version: "1.0.7"
+version: "1.0.8"
