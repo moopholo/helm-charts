@@ -8,6 +8,8 @@ function charts_with_changes_json_array() {
   for c in $(ct list-changed --config "$PROJECT_DIR/.github/chart-testing.yml"); do
     charts+=("${c##charts/}")
   done
+
+  # shellcheck disable=SC2068
   echo "[\"$(join_by '","' ${charts[@]})\"]"
 }
 
