@@ -1,0 +1,6 @@
+pr: true
+skip-existing: true
+owner: moopholo
+charts-repo: https://helm.monetact.net/
+package-path: .helm/packages
+index-path: .helm/index.yaml
