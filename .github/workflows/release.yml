@@ -53,6 +53,6 @@ jobs:
       - uses: helm/chart-releaser-action@v1.2.1
         with:
           charts_dir: charts
-          config: .github/chart-release.yml
+          owner: moopholo
         env:
           CR_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
