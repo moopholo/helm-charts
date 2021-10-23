@@ -35,6 +35,7 @@ jobs:
   charts:
     name: runner / charts
     runs-on: ubuntu-latest
+    needs: [changelog]
 
     permissions:
       contents: write
