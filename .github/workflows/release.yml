@@ -35,6 +35,7 @@ jobs:
   charts:
     name: runner / charts
     runs-on: ubuntu-latest
+    needs: [changelog]
 
     permissions:
       contents: write
@@ -53,6 +54,6 @@ jobs:
       - uses: helm/chart-releaser-action@v1.2.1
         with:
           charts_dir: charts
-          config: .github/chart-release.yml
+          owner: moopholo
         env:
           CR_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
