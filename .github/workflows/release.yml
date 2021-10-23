@@ -19,6 +19,7 @@ jobs:
         with:
           fetch-depth: 0
 
+      - run: "apk add --update --no-cache bash yq gettext"
       - id: changed-charts
         uses: tj-actions/changed-files@v10.1
         with:
@@ -26,7 +27,6 @@ jobs:
 
       - if: steps.changed-charts.outputs.any_changed == 'true'
         run: |
-          apk add --update --no-cache bash yq gettext
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
           ./.github/scripts/update-chart-changelogs.sh ${{ steps.changed-charts.outputs.all_modified_files }}
