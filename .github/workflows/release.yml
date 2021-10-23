@@ -35,6 +35,7 @@ jobs:
   charts:
     name: runner / charts
     runs-on: ubuntu-latest
+    container: quay.io/helmpack/chart-releaser:v1.2.1
     needs: [changelog]
 
     permissions:
@@ -48,10 +49,8 @@ jobs:
           fetch-depth: 0
 
       - uses: azure/setup-helm@v1
-      - uses: docker://quay.io/helmpack/chart-releaser:v1.2.1
-        with:
-          entrypoint: /bin/sh
-          args: |
-            -c 'apk add --update --no-cache bash; bash ./.github/scripts/release-charts.sh'
+      - run: |
+          apk add --update --no-cache bash
+          bash ./.github/scripts/release-charts.sh
         env:
           CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
