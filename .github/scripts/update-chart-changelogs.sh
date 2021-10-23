@@ -9,11 +9,13 @@ function main() {
   declare -a updated_changelogs
 
   for chart_file in "${modified_charts[@]}"; do
-    local -r chart_name="$(yq e '.name' "$chart_file")"
-    local -r \
-      chart_path="charts/$chart_name" \
-      git_chglog_config_template="$GITHUB_WORKSPACE/.github/chglog/config.yml.tpl" \
-      git_chglog_config_file="$GITHUB_WORKSPACE/.github/chglog/${chart_name}.yml"
+    local chart_name chart_path git_chglog_config_template git_chglog_config_file
+
+    chart_name="$(yq e '.name' "$chart_file")"
+    chart_path="charts/$chart_name"
+
+    git_chglog_config_template="$GITHUB_WORKSPACE/.github/chglog/config.yml.tpl"
+    git_chglog_config_file="$GITHUB_WORKSPACE/.github/chglog/${chart_name}.yml"
 
     echo "---> Updating changelog for $chart_name"
     env CHART_NAME="$chart_name" envsubst <"$git_chglog_config_template" >"$git_chglog_config_file"
