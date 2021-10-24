@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   cert-manager-tls:
   - apiVersion: v2
+    created: "2021-10-24T02:54:09.93592859Z"
+    description: A Helm chart for Kubernetes to install cert-manager certificates
+      and issuers
+    digest: 8c3583974f5b1230ee2273da88814c07ef120c056e83d0f493df663b016217a6
+    name: cert-manager-tls
+    type: application
+    urls:
+    - https://github.com/moopholo/helm-charts/releases/download/cert-manager-tls-1.1.0/cert-manager-tls-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
     created: "2021-10-23T19:36:04.395700855Z"
     description: A Helm chart for Kubernetes to install cert-manager certificates
       and issuers
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/moopholo/helm-charts/releases/download/traefik-custom-resources-0.2.15/traefik-custom-resources-0.2.15.tgz
     version: 0.2.15
-generated: "2021-10-23T19:36:04.691230206Z"
+generated: "2021-10-24T02:54:10.111168356Z"
