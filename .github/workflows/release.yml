@@ -22,7 +22,7 @@ jobs:
 
       - run: "apk add --update --no-cache bash yq gettext"
       - id: changed-charts
-        uses: tj-actions/changed-files@v10.1
+        uses: tj-actions/changed-files@v11
         with:
           files: charts/*/Chart.yaml
 
