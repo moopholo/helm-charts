@@ -3,4 +3,4 @@ name: traefik-custom-resources
 description: Generate traefik ingress CRD resources
 type: application
 
-version: "0.2.15"
+version: "0.3.0"
