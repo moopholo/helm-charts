@@ -1,10 +1,10 @@
-{{- $apiVersion := .Values.middlewares.apiVersion | default .Values.global.apiVersion -}}
+{{- $apiVersion := .Values.services.apiVersion | default .Values.global.apiVersion -}}
 {{- $globalAnnotations := .Values.global.annotations | default (dict) -}}
 {{- $globalLabels := .Values.global.labels | default (dict) -}}
-{{- range $name, $config := omit .Values.middlewares "apiVersion" }}
+{{- range $name, $config := omit .Values.services "apiVersion" }}
 ---
 apiVersion: {{ $apiVersion }}
-kind: Middleware{{ if $config.tcp }}TCP{{ end }}
+kind: TraefikService
 metadata:
   name: {{ $name }}
   namespace: {{ $.Release.Namespace }}

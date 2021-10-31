@@ -4,7 +4,7 @@
 {{- range $name, $config := omit .Values.routes "apiVersion" }}
 ---
 apiVersion: {{ $apiVersion }}
-kind: IngressRoute
+kind: IngressRoute{{ if $config.tcp }}TCP{{ else if $config.udp }}UDP{{ end }}
 metadata:
   name: {{ $name }}
   namespace: {{ $.Release.Namespace }}

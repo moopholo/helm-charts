@@ -4,6 +4,7 @@ global:
   annotations: {}
 
 routes: {}
+services: {}
 middlewares: {}
 tlsStores: {}
 tlsOptions: {}
