@@ -23,6 +23,15 @@ entries:
     version: 1.0.16
   traefik-custom-resources:
   - apiVersion: v2
+    created: "2021-10-31T04:23:21.818107086Z"
+    description: Generate traefik ingress CRD resources
+    digest: bbe878509dca03a605fb1d76479af84d99dd0d50b5a64c600beb6ca0359d883b
+    name: traefik-custom-resources
+    type: application
+    urls:
+    - https://github.com/moopholo/helm-charts/releases/download/traefik-custom-resources-1.0.0/traefik-custom-resources-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
     created: "2021-10-23T19:36:04.691224406Z"
     description: Generate traefik ingress CRD resources
     digest: 856b4597dcb5e98752a39e77a05ac4cd7dedf9caac8123e8f262971ac8dae1b2
@@ -31,4 +40,4 @@ entries:
     urls:
     - https://github.com/moopholo/helm-charts/releases/download/traefik-custom-resources-0.2.15/traefik-custom-resources-0.2.15.tgz
     version: 0.2.15
-generated: "2021-10-24T02:54:10.111168356Z"
+generated: "2021-10-31T04:23:21.818119086Z"
