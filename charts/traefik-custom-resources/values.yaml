@@ -1,4 +1,4 @@
-global:
+common:
   apiVersion: traefik.containo.us/v1alpha1
   labels: {}
   annotations: {}

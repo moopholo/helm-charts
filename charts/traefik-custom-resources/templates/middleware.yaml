@@ -1,6 +1,6 @@
-{{- $apiVersion := .Values.middlewares.apiVersion | default .Values.global.apiVersion -}}
-{{- $globalAnnotations := .Values.global.annotations | default (dict) -}}
-{{- $globalLabels := .Values.global.labels | default (dict) -}}
+{{- $apiVersion := .Values.middlewares.apiVersion | default .Values.common.apiVersion -}}
+{{- $commonAnnotations := .Values.common.annotations | default (dict) -}}
+{{- $commonLabels := .Values.common.labels | default (dict) -}}
 {{- range $name, $config := omit .Values.middlewares "apiVersion" }}
 ---
 apiVersion: {{ $apiVersion }}
@@ -10,9 +10,9 @@ metadata:
   namespace: {{ $.Release.Namespace }}
   labels:
     {{- include "traefik-custom-resources.labels" (dict "name" $name "context" $) | nindent 4 }}
-    {{- with ($config.labels | default (dict) | mustDeepCopy | mustMergeOverwrite (mustDeepCopy $globalLabels)) }}
+    {{- with ($config.labels | default (dict) | mustDeepCopy | mustMergeOverwrite (mustDeepCopy $commonLabels)) }}
       {{- . | toYaml | nindent 4 }}{{ end }}
-{{- with ($config.annotations | default (dict) | mustDeepCopy | mustMergeOverwrite (mustDeepCopy $globalAnnotations)) }}
+{{- with ($config.annotations | default (dict) | mustDeepCopy | mustMergeOverwrite (mustDeepCopy $commonAnnotations)) }}
   annotations:
     {{- . | toYaml | nindent 4 }}{{ end }}
 spec:
