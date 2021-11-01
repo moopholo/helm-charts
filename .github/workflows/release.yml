@@ -28,7 +28,7 @@ jobs:
 
       - id: set-matrix
         run: |
-          ./.github/scripts/list-changes.sh ${{ steps.changed-charts.outputs.all_modified_files }}
+          ./.github/scripts/list-changed.sh ${{ steps.changed-charts.outputs.all_modified_files }}
 
   tag:
     name: runner / tag
