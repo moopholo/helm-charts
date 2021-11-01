@@ -24,7 +24,7 @@ jobs:
       - id: changed-charts
         uses: tj-actions/changed-files@v11.5
         with:
-          files: charts/*/Chart.yaml
+          files: Chart.yaml
 
       - id: set-matrix
         run: |
@@ -73,7 +73,7 @@ jobs:
       - id: changed-charts
         uses: tj-actions/changed-files@v11.5
         with:
-          files: charts/*/Chart.yaml
+          files: Chart.yaml
 
       - if: steps.changed-charts.outputs.any_changed == 'true'
         run: |
