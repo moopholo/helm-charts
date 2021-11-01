@@ -1,4 +1,6 @@
 documentation: [docs/**/*, "**/README.md"]
 changelog: ["**/CHANGELOG.md"]
+helm-repository: [".helm/index.yaml", ".helm/packages/**/*"]
+ci: [".github/**/*"]
 chart/traefik-custom-resources: [charts/traefik-custom-resources/**/*]
 chart/cert-manager-tls: [charts/cert-manager-tls/**/*]
