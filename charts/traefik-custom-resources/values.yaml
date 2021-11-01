@@ -1,11 +1,27 @@
 common:
+  # -- Default traefik custom resource api version.
   apiVersion: traefik.containo.us/v1alpha1
+
+  # -- Common labels to apply to all resources.
   labels: {}
+
+  # -- Common annotations to apply to all resources.
   annotations: {}
 
+# -- Map of traefik IngressRoute resources. Map key is resource name.
 routes: {}
+
+# -- Map of traefik TraefikService resources. Map key is resource name.
 services: {}
+
+# -- Map of traefik Middleware resources. Map key is resource name.
 middlewares: {}
+
+# -- Map of traefik TLSStore resources. Map key is resource name.
 tlsStores: {}
+
+# -- Map of traefik TLSOption resources. Map key is resource name.
 tlsOptions: {}
+
+# -- Map of traefik ServersTransport resources. Map key is resource name.
 serversTransport: {}

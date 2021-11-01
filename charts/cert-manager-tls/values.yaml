@@ -1,9 +1,15 @@
+# -- Default cert-manager api version to use.
+# See https://cert-manager.io/docs/reference/api-docs/
 apiVersion: cert-manager.io/v1
 
 common:
+  # -- Common annotations to apply to all resources. May be overriden by individual resources.
   annotations: {}
+  # -- Common labels to apply to all resources. May be overriden by individual resources.
   labels: {}
 
+# -- Map of cert-manager.io/Certificate resources to create. Map key is resource name.
 certificates: {}
 
+# -- Map of cert-manager.io/Issuer and cert-manager.io/ClusterIssuer resources to create. Map key is resource name.
 issuers: {}
