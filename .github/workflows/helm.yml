@@ -1,0 +1,47 @@
+name: Helm
+
+on:
+  pull_request:
+    branches: [main]
+    paths: ["charts/**/*"]
+
+jobs:
+  chart-test:
+    name: runner / test-charts
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: azure/setup-helm@v1
+      - uses: actions/setup-python@v2
+      - uses: helm/chart-testing-action@v2.1.0
+
+      - run: ct lint --config $GITHUB_WORKSPACE/.github/chart-testing.yml
+
+  chart-readme:
+    name: runner / update-readme
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - uses: docker://jnorwood/helm-docs:v1.5.0
+        with:
+          args: --chart-search-root=$GITHUB_WORKSPACE/charts
+
+      - uses: EndBug/add-and-commit@v7.4.0
+        with:
+          default_author: github_actions
+          add: charts/*/README.md
+          message: "chore(docs): update chart READMEs"
