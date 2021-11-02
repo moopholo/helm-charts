@@ -23,7 +23,9 @@ function charts_with_changes_json_array() {
   echo "[\"$(join_by '","' ${charts[@]})\"]"
 }
 
+echo "---> building changed-charts matrix"
 changed="$(charts_with_changes_json_array "$@")"
+echo "changed charts: $changed"
 echo "::set-output name=matrix::{\"chart-name\":$changed}"
 if [[ $changed == '[""]' ]]; then
   echo "::set-output name=changes::false"
