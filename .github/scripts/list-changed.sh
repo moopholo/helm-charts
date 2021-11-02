@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 export PROJECT_DIR="${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel)}"
 
+# shellcheck disable=SC1091
 source "$PROJECT_DIR/.github/scripts/utils.sh"
 
 function charts_with_changes_json_array() {

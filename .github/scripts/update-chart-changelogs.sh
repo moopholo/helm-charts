@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 export PROJECT_DIR="${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel)}"
 
+# shellcheck disable=SC1091
 source "$PROJECT_DIR/.github/scripts/utils.sh"
 
 function main() {
@@ -30,9 +31,11 @@ function main() {
     updated_changelogs+=("$chart_path/CHANGELOG.md")
   done
 
+  # shellcheck disable=SC2068
   echo "::set-output name=updated-charts::$(join_by ',' ${updated_charts[@]})"
+  # shellcheck disable=SC2068
   echo "::set-output name=updated-changelogs::$(join_by ',' ${updated_changelogs[@]})"
-  git commit --message "ci(): update chart changelogs [skip ci]"
+  git commit --message "ci(docs): update chart changelogs [skip ci]"
   git push
 }
 

@@ -53,6 +53,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           custom_tag: ${{ matrix.chart-name }}-${{ steps.chart-version.outputs.result }}
+          tag_prefix: ""
 
   changelog:
     name: runner / changelog
