@@ -1,4 +1,16 @@
 
+<a name="traefik-custom-resources-1.0.0"></a>
+## [traefik-custom-resources-1.0.0](https://github.com/moopholo/helm-charts/compare/traefik-custom-resources-0.3.0...traefik-custom-resources-1.0.0)
+
+> 2021-10-31
+
+
+### What's Changed
+### Enhancements
+
+- Add tcp, udp and service resources ([#32](https://github.com/moopholo/helm-charts/issues/32))
+
+
 <a name="traefik-custom-resources-0.3.0"></a>
 ## [traefik-custom-resources-0.3.0](https://github.com/moopholo/helm-charts/compare/traefik-custom-resources-0.2.15...traefik-custom-resources-0.3.0)
 
