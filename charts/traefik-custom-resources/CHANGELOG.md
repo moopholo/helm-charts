@@ -1,4 +1,18 @@
 
+<a name="traefik-custom-resources-2.0.6"></a>
+## [traefik-custom-resources-2.0.6](https://github.com/moopholo/helm-charts/compare/traefik-custom-resources-2.0.5...traefik-custom-resources-2.0.6)
+
+> 2021-11-02
+
+No Changes
+
+<a name="traefik-custom-resources-2.0.5"></a>
+## [traefik-custom-resources-2.0.5](https://github.com/moopholo/helm-charts/compare/traefik-custom-resources-1.0.0...traefik-custom-resources-2.0.5)
+
+> 2021-11-02
+
+No Changes
+
 <a name="traefik-custom-resources-1.0.0"></a>
 ## [traefik-custom-resources-1.0.0](https://github.com/moopholo/helm-charts/compare/traefik-custom-resources-0.3.0...traefik-custom-resources-1.0.0)
 

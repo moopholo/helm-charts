@@ -1,4 +1,18 @@
 
+<a name="cert-manager-tls-2.0.6"></a>
+## [cert-manager-tls-2.0.6](https://github.com/moopholo/helm-charts/compare/cert-manager-tls-2.0.5...cert-manager-tls-2.0.6)
+
+> 2021-11-02
+
+No Changes
+
+<a name="cert-manager-tls-2.0.5"></a>
+## [cert-manager-tls-2.0.5](https://github.com/moopholo/helm-charts/compare/cert-manager-tls-1.1.0...cert-manager-tls-2.0.5)
+
+> 2021-11-02
+
+No Changes
+
 <a name="cert-manager-tls-1.1.0"></a>
 ## [cert-manager-tls-1.1.0](https://github.com/moopholo/helm-charts/compare/cert-manager-tls-1.0.16...cert-manager-tls-1.1.0)
 
