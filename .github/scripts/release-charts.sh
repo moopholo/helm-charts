@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 export PROJECT_DIR="${GITHUB_WORKSPACE:-$(git rev-parse --show-toplevel)}"
 
+# shellcheck disable=SC1091
 source "$PROJECT_DIR/.github/scripts/utils.sh"
 
 pushd "$PROJECT_DIR" 2>/dev/null || exit 1
@@ -13,7 +14,7 @@ mkdir -p "$PROJECT_DIR/.helm"
 
 cr_config="$PROJECT_DIR/.github/chart-release.yml"
 
-for chart in $PROJECT_DIR/charts/*; do
+for chart in "$PROJECT_DIR"/charts/*; do
   if [[ -f "$chart/Chart.yaml" ]]; then
     echo "---> Packaging chart $(basename "$chart")"
     cr package "$chart" --config "$cr_config"
