@@ -16,5 +16,5 @@ metadata:
   annotations:
     {{- . | toYaml | nindent 4 }}{{ end }}
 spec:
-  {{- omit $config "annotations" "labels" | toYaml | nindent 2 }}
+  {{- omit $config "annotations" "labels" "tcp" "udp" | toYaml | nindent 2 }}
 {{ end -}}
