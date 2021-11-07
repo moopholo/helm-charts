@@ -1,4 +1,16 @@
 
+<a name="traefik-custom-resources-2.0.7"></a>
+## [traefik-custom-resources-2.0.7](https://github.com/moopholo/helm-charts/compare/traefik-custom-resources-2.0.6...traefik-custom-resources-2.0.7)
+
+> 2021-11-07
+
+
+### What's Changed
+### Fixes
+
+- drop tcp and udp from resources ([#47](https://github.com/moopholo/helm-charts/issues/47))
+
+
 <a name="traefik-custom-resources-2.0.6"></a>
 ## [traefik-custom-resources-2.0.6](https://github.com/moopholo/helm-charts/compare/traefik-custom-resources-2.0.5...traefik-custom-resources-2.0.6)
 
