@@ -96,4 +96,22 @@ entries:
     urls:
     - https://github.com/moopholo/helm-charts/releases/download/traefik-custom-resources-0.2.15/traefik-custom-resources-0.2.15.tgz
     version: 0.2.15
-generated: "2021-11-07T17:27:15.370327796Z"
+  velocity:
+  - apiVersion: v2
+    appVersion: 3.0.1
+    created: "2021-11-09T08:00:50.582509436Z"
+    description: A modern minecraft proxy
+    digest: 2578555cdf3a28355b2bd84dc5959258743bfab3f0be3d41c3699317ac6212bf
+    keywords:
+    - minecraft
+    - velocity
+    name: velocity
+    sources:
+    - https://velocitypowered.com/
+    - https://github.com/moopholo/docker-velocity
+    - https://github.com/moopholo/helm-charts
+    type: application
+    urls:
+    - https://github.com/moopholo/helm-charts/releases/download/velocity-0.1.0/velocity-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-11-09T08:00:50.582694538Z"
