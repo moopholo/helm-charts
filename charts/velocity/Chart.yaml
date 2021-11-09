@@ -1,0 +1,15 @@
+apiVersion: v2
+name: velocity
+description: A modern minecraft proxy
+type: application
+
+version: "0.1.0"
+appVersion: "3.0.1"
+
+keywords:
+  - minecraft
+  - velocity
+sources:
+  - https://velocitypowered.com/
+  - https://github.com/moopholo/docker-velocity
+  - https://github.com/moopholo/helm-charts
