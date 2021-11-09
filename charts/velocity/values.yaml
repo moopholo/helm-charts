@@ -1,0 +1,136 @@
+# Default values for velocity.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# -- Override the Chart name used in templates
+nameOverride: ""
+# -- Override the full Release name used in templates
+fullnameOverride: ""
+
+image:
+  # -- Image repository to use
+  repository: ghcr.io/moopholo/docker-velocity
+  # -- Image tag to use.
+  # If not set, will use @default
+  # @default -- .Chart.AppVersion
+  tag: ""
+
+  # -- Image pull policy
+  pullPolicy: IfNotPresent
+
+# -- The port velocity listens on
+listenPort: 25577
+
+deployment:
+  # -- Extra deployment labels
+  labels: {}
+  # -- Deployment annotations
+  annotations: {}
+
+  # -- Deployment replicas
+  replicas: 1
+
+service:
+  # -- Should Service resource be created
+  enabled: true
+
+  # -- Extra service labels
+  labels: {}
+  # -- Service annotations
+  annotations: {}
+
+  # -- Service type
+  type: ClusterIP
+  # -- (int) Service port
+  # @default -- proxyPort
+  port: ""
+
+pod:
+  # -- Extra pod labels
+  labels: {}
+  # -- Pod annotations
+  annotations: {}
+
+  # -- Pod level security context
+  securityContext: {}
+
+  # -- Pod node selectors
+  nodeSelector: {}
+
+  # -- Pod tolerations
+  tolerations: []
+
+  # -- Pod affinity
+  affinity: {}
+
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: true
+  # -- The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  # @default -- generated using the fullname template
+  name:
+
+  # -- Extra ServiceAccount labels
+  labels: {}
+  # -- ServiceAccount annotations
+  annotations: {}
+
+  # -- Should ServiceAccount token be automounted into Pods
+  automountToken: false
+  # -- Secrets to which this ServiceAccount provides access
+  secrets: []
+  # -- Image Pull Secrets to which this ServiceAccount provides access
+  imagePullSecrets: []
+
+container:
+  # -- Container level security context for the main velocity container
+  securityContext:
+    {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+
+  # -- Resource requests and limits for the main velocity container
+  resources:
+    {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
+
+ingress:
+  # -- Should Ingress resource be created
+  enabled: false
+  # -- IngressClass the ingress resource should use
+  className: ""
+
+  # -- Extra Ingress labels
+  labels: {}
+  # -- Ingress annotations
+  annotations:
+    {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+
+  # -- Ingress routing rules
+  hosts:
+    - host: ""
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+  # -- Ingress TLS configuration
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local

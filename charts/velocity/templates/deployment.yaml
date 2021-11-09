@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "velocity.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "velocity.labels" . | nindent 4 }}
+    {{- with .Values.deployment.labels }}{{ . | toYaml | nindent 4 }}{{ end }}
+  annotations:
+    {{- .Values.deployment.annotations | toYaml | nindent 4 }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      {{- include "velocity.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        {{- .Values.pod.annotations | toYaml | nindent 8 }}
+      labels:
+        {{- include "velocity.selectorLabels" . | nindent 8 }}
+        {{- with .Values.pod.labels }}{{ . | toYaml | nindent 8 }}{{ end }}
+    spec:
+      serviceAccountName: {{ include "velocity.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.pod.securityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.container.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: proxy
+              containerPort: {{ .Values.listenPort | int }}
+              protocol: TCP
+          startupProbe:
+            tcpSocket:
+              port: proxy
+            failureThreshold: 12
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: proxy
+            periodSeconds: 5
+          resources:
+            {{- toYaml .Values.container.resources | nindent 12 }}
+      {{- with .Values.pod.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.pod.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.pod.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
