@@ -30,6 +30,19 @@ spec:
             {{- toYaml .Values.container.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+        {{- with .Values.container.envFrom }}
+          envFrom:
+            {{- . | toYaml | nindent 12 }}{{ end }}
+          env:
+          {{- range $name, $value := .Values.container.env }}
+          - name: {{ $name }}
+            {{- if kindIs "map" $value }}
+            valueFrom:
+              {{- $value.valueFrom | default (dict) | toYaml | nindent 14 }}
+            {{- else }}
+            value: {{ $value | toString | squote }}
+            {{- end }}
+          {{- end }}
           ports:
             - name: proxy
               containerPort: {{ .Values.listenPort | int }}

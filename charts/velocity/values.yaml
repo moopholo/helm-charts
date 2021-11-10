@@ -84,6 +84,13 @@ serviceAccount:
   imagePullSecrets: []
 
 container:
+  # -- List source to populate the main velocity container environment.
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#envfromsource-v1-core
+  envFrom: []
+
+  # -- Environment variables to set in the main velocity container
+  env: {}
+
   # -- Container level security context for the main velocity container
   securityContext:
     {}
