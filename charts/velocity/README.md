@@ -1,6 +1,6 @@
 # velocity
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.0.1](https://img.shields.io/badge/AppVersion-3.0.1-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 3.0.1](https://img.shields.io/badge/AppVersion-3.0.1-informational?style=flat-square)
 
 A modern minecraft proxy
 
@@ -14,6 +14,8 @@ A modern minecraft proxy
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| container.env | object | `{}` | Environment variables to set in the main velocity container |
+| container.envFrom | list | `[]` | List source to populate the main velocity container environment. https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#envfromsource-v1-core |
 | container.resources | object | `{}` | Resource requests and limits for the main velocity container |
 | container.securityContext | object | `{}` | Container level security context for the main velocity container |
 | deployment.annotations | object | `{}` | Deployment annotations |
