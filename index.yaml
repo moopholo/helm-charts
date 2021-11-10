@@ -99,6 +99,23 @@ entries:
   velocity:
   - apiVersion: v2
     appVersion: 3.0.1
+    created: "2021-11-10T01:36:46.499057282Z"
+    description: A modern minecraft proxy
+    digest: 87888a39368bfe3bf2e7759c2ac29145817f93bde63eacc793ebe55b29b78738
+    keywords:
+    - minecraft
+    - velocity
+    name: velocity
+    sources:
+    - https://velocitypowered.com/
+    - https://github.com/moopholo/docker-velocity
+    - https://github.com/moopholo/helm-charts
+    type: application
+    urls:
+    - https://github.com/moopholo/helm-charts/releases/download/velocity-0.2.0/velocity-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 3.0.1
     created: "2021-11-09T08:00:50.582509436Z"
     description: A modern minecraft proxy
     digest: 2578555cdf3a28355b2bd84dc5959258743bfab3f0be3d41c3699317ac6212bf
@@ -114,4 +131,4 @@ entries:
     urls:
     - https://github.com/moopholo/helm-charts/releases/download/velocity-0.1.0/velocity-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-09T08:00:50.582694538Z"
+generated: "2021-11-10T01:36:46.499087683Z"
