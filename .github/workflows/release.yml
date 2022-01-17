@@ -28,7 +28,7 @@ jobs:
 
       - id: set-matrix
         run: |
-          ./.github/scripts/list-changed.sh ${{ steps.changed-charts.outputs.all_changed_files }}
+          ./.github/scripts/list-changed.sh ${{ steps.changed-charts.outputs.all_modified_files }}
 
   tag:
     name: runner / tag
@@ -80,7 +80,7 @@ jobs:
         run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          bash ./.github/scripts/update-chart-changelogs.sh ${{ steps.changed-charts.outputs.all_changed_files }}
+          bash ./.github/scripts/update-chart-changelogs.sh ${{ steps.changed-charts.outputs.all_modified_files }}
 
   charts:
     name: runner / charts
