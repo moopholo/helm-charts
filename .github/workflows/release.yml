@@ -98,7 +98,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: azure/setup-helm@v1
+      - uses: azure/setup-helm@v2.0
       - run: |
           apk add --update --no-cache bash
           bash ./.github/scripts/release-charts.sh
