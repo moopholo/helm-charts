@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: chart-version
-        uses: mikefarah/yq@v4.16.2
+        uses: mikefarah/yq@v4.18.1
         with:
           cmd: yq eval '.version' charts/${{ matrix.chart-name }}/Chart.yaml
       - uses: mathieudutour/github-tag-action@v6.0
