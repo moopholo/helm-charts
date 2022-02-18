@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
 
       - id: changed-charts
-        uses: tj-actions/changed-files@v13.1
+        uses: tj-actions/changed-files@v16
         with:
           files: Chart.yaml
 
@@ -72,7 +72,7 @@ jobs:
 
       - run: "apk add --update --no-cache bash yq gettext"
       - id: changed-charts
-        uses: tj-actions/changed-files@v13.1
+        uses: tj-actions/changed-files@v16
         with:
           files: Chart.yaml
 
