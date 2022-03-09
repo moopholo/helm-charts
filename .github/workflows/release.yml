@@ -17,12 +17,12 @@ jobs:
       changes: ${{ steps.set-matrix.outputs.changes }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - id: changed-charts
-        uses: tj-actions/changed-files@v13.1
+        uses: tj-actions/changed-files@v17.3
         with:
           files: Chart.yaml
 
@@ -44,7 +44,7 @@ jobs:
       matrix: ${{ fromJson(needs.list-changed.outputs.matrix) }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - id: chart-version
         uses: mikefarah/yq@v4.16.2
         with:
@@ -65,14 +65,14 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
           token: ${{ secrets.ACTIONS_PAT }}
 
       - run: "apk add --update --no-cache bash yq gettext"
       - id: changed-charts
-        uses: tj-actions/changed-files@v13.1
+        uses: tj-actions/changed-files@v17.3
         with:
           files: Chart.yaml
 
@@ -94,7 +94,7 @@ jobs:
       packages: write
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
