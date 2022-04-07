@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - uses: azure/setup-helm@v1
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v3.1.1
       - uses: helm/chart-testing-action@v2.2.0
 
       - run: ct lint --config $GITHUB_WORKSPACE/.github/chart-testing.yml
