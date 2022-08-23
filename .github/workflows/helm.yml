@@ -40,7 +40,7 @@ jobs:
         with:
           args: --chart-search-root=/github/workspace/charts
 
-      - uses: EndBug/add-and-commit@v7.5.0
+      - uses: EndBug/add-and-commit@v9.1.0
         with:
           default_author: github_actions
           add: charts/*/README.md
