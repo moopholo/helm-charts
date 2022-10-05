@@ -17,7 +17,7 @@ jobs:
       changes: ${{ steps.set-matrix.outputs.changes }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
 
@@ -44,7 +44,7 @@ jobs:
       matrix: ${{ fromJson(needs.list-changed.outputs.matrix) }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
       - id: chart-version
         uses: mikefarah/yq@v4.16.2
         with:
@@ -65,7 +65,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
           token: ${{ secrets.ACTIONS_PAT }}
@@ -94,7 +94,7 @@ jobs:
       packages: write
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
 
